@@ -1,12 +1,9 @@
 import gql from "graphql-tag";
 
 const CREATE_USER = gql`
-  {
-    users {
-      id
+  mutation createUser($userInput: UserInput) {
+    createUser(userInput: $userInput) {
       name
-      email
-      phoneNumber
     }
   }
 `;

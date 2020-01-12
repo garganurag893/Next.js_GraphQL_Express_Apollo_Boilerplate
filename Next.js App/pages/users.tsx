@@ -1,40 +1,21 @@
 import React from "react";
-import gql from "graphql-tag";
 import { useQuery } from "@apollo/react-hooks";
 import List from "../src/components/List";
-
-interface User {
-  id: string;
-  name: string;
-  email: string;
-}
-
-const GET_USERS = gql`
-  {
-    users {
-      name
-      _id
-      phoneNumber
-      email
-    }
-  }
-`;
+import GET_USERS from "../src/graphql/query/user";
 
 const Users = () => {
   const { loading, error, data } = useQuery(GET_USERS);
-
-  if (loading) return "Loading...";
-  if (error) return `Error! ${error.message}`;
-
+  let message = "Users";
+  if (loading) message = "Loading...";
+  if (error) message = `Error! ${error.message}`;
+  if (data && data.users.length <= 0) message = "No Users";
   return (
     <div className="container">
-      <h1 className="heading">Users</h1>
-      {data.users.length > 0 ? (
+      <h1 className="heading">{message}</h1>
+      {data && data.users.length > 0 && (
         <div className="listContainer">
           <List img="./user.png" data={data.users} />
         </div>
-      ) : (
-        <h1 className="heading">No Users</h1>
       )}
       <style jsx>
         {`

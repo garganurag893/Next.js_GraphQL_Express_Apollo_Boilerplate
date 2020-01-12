@@ -1,14 +1,13 @@
 import gql from "graphql-tag";
 
-const GET_ALL_USERS = gql`
+const GET_USERS = gql`
   {
     users {
-      id
       name
+      _id
       email
-      phoneNumber
     }
   }
 `;
 
-export default GET_ALL_USERS;
+export default GET_USERS;
