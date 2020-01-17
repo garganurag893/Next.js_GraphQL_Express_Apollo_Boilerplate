@@ -5,7 +5,6 @@ import USER_ADDED from '../src/graphql/subscription/users';
 
 const Users = () => {
   const { data, loading, error } = useSubscription(USER_ADDED);
-  console.log(data);
   let message = 'New User';
   if (loading) message = 'Listening...';
   if (error) message = `Error! ${error.message}`;

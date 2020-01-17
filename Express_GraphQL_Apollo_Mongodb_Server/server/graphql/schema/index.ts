@@ -33,7 +33,7 @@ const schema: ApolloServerExpressConfig = {
   introspection: true,
   context: async ({ req, connection }: any) => {
     if (connection) {
-      console.log('yes connected', req);
+      console.log('New Subscriber Connected', req);
     }
   },
   playground: true
