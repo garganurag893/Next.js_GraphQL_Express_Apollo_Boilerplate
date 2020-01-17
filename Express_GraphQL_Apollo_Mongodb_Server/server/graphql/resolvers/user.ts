@@ -1,5 +1,5 @@
 import { PubSub } from 'apollo-server';
-import * as mongoose from 'mongoose';
+import mongoose from 'mongoose';
 import User from '../../models/user';
 import { transformUser } from './merge';
 const pubsub = new PubSub();
