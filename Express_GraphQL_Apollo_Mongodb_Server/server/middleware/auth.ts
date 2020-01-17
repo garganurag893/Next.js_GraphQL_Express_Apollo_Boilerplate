@@ -24,7 +24,7 @@ export default (req: any, res: any, next: any) => {
     return next();
   }
   req.isAuth = true;
-  //@ts-ignore
+  // @ts-ignore
   req.userId = decodedToken.userId;
   return next();
 };

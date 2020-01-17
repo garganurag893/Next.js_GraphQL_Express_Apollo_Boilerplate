@@ -1,0 +1,24 @@
+{
+  "defaultSeverity": "error",
+  "extends": [
+    "tslint:recommended"
+  ],
+  "rules": {
+    "no-trailing-whitespace": [true, "always"],
+    "prefer-const": [true, {
+      "destructuring": "any"
+    }],
+    "semicolon": [true, "always"],
+    "quotemark": [true, "single"],
+    "trailing-comma": [
+      true,
+      {
+        "singleline": "never",
+        "multiline": "never"
+      }
+    ],
+    "object-literal-sort-keys": false,
+    "no-console": false
+  },
+  "rulesDirectory": []
+}

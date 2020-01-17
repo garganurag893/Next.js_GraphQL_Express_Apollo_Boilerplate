@@ -1,15 +1,15 @@
-import { UserQueries, UserMutation, UserSubscription } from './user';
+import { UserMutation, UserQueries, UserSubscription } from './user';
 
 const rootResolver = {
   Query: {
-    ...UserQueries,
+    ...UserQueries
   },
   Mutation: {
-    ...UserMutation,
+    ...UserMutation
   },
   Subscription: {
-    ...UserSubscription,
-  },
+    ...UserSubscription
+  }
 };
 
 export default rootResolver;

@@ -5,9 +5,11 @@
   "private": true,
   "main": "dist/index.js",
   "scripts": {
-    "build": "tsc",
+    "clean": "rimraf dist/*",
+    "prebuild": "tslint -c tslint.json -p tsconfig.json --fix",
+    "build": "clean tsc",
     "prestart": "npm run build",
-    "start": "nodemon dist/index.js",
+    "start": "node .",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
@@ -17,7 +19,6 @@
     "apollo-server": "^2.9.6",
     "apollo-server-express": "^2.9.6",
     "bluebird": "^3.5.5",
-    "core-util-is": "^1.0.2",
     "express": "^4.17.1",
     "jsonwebtoken": "^8.5.1",
     "lodash": "^4.17.15",
@@ -30,13 +31,8 @@
     "@types/lodash": "^4.14.149",
     "@types/mongoose": "^5.5.41",
     "@types/node": "^13.1.7",
-    "@typescript-eslint/eslint-plugin": "^2.16.0",
-    "@typescript-eslint/parser": "^2.16.0",
-    "eslint": "^6.8.0",
-    "eslint-config-prettier": "^6.9.0",
-    "eslint-plugin-prettier": "^3.1.2",
     "nodemon": "^1.19.2",
-    "prettier": "^1.19.1",
+    "tslint": "^5.20.1",
     "typescript": "^3.7.5"
   }
 }

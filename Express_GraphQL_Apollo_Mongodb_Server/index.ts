@@ -8,13 +8,13 @@ Promise.promisifyAll(mongoose);
 
 // Connecting Mongo DB
 mongoose.connect(config.db, {
-  reconnectInterval: 500,
   bufferMaxEntries: 0,
-  socketTimeoutMS: 0,
   keepAlive: true,
+  reconnectInterval: 500,
   reconnectTries: 30,
+  socketTimeoutMS: 0,
   useNewUrlParser: true,
-  useUnifiedTopology: true,
+  useUnifiedTopology: true
 });
 
 mongoose.connection.on('error', () => {
@@ -27,6 +27,10 @@ ExpressServer.init();
 // listen on port config.port
 ExpressServer.httpServer.listen(process.env.PORT || config.port, () => {
   console.log(`🚀  Server ready at ${config.port}`);
-  console.log(`🚀 Server ready at http://localhost:${config.port}${ExpressServer.server.graphqlPath}`);
-  console.log(`🚀 Subscriptions ready at ws://localhost:${config.port}${ExpressServer.server.subscriptionsPath}`);
+  console.log(
+    `🚀 Server ready at http://localhost:${config.port}${ExpressServer.server.graphqlPath}`
+  );
+  console.log(
+    `🚀 Subscriptions ready at ws://localhost:${config.port}${ExpressServer.server.subscriptionsPath}`
+  );
 });

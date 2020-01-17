@@ -1,5 +1,5 @@
-import User from '../../models/user';
 import dateToString from '../../helpers/date';
+import User from '../../models/user';
 
 const getUser = async (id: string) => {
   try {
@@ -8,7 +8,7 @@ const getUser = async (id: string) => {
       ...user._doc,
       _id: user.id,
       createdAt: dateToString(user._doc.createdAt),
-      updatedAt: dateToString(user._doc.updatedAt),
+      updatedAt: dateToString(user._doc.updatedAt)
     };
   } catch (err) {
     throw err;
@@ -20,7 +20,7 @@ const transformUser = (user: any) => {
     ...user._doc,
     _id: user.id,
     createdAt: dateToString(user._doc.createdAt),
-    updatedAt: dateToString(user._doc.updatedAt),
+    updatedAt: dateToString(user._doc.updatedAt)
   };
 };
 

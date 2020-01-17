@@ -36,8 +36,8 @@ const schema = {
     }
   },
   playground: {
-    endpointURL: '/graphql',
-  },
+    endpointURL: '/graphql'
+  }
 };
 
 export default schema;

@@ -5,19 +5,19 @@ const userSchema = new mongoose.Schema(
     _id: mongoose.Schema.Types.ObjectId,
     email: {
       type: String,
-      required: true,
+      required: true
     },
     name: {
       type: String,
-      required: true,
+      required: true
     },
     password: {
-      type: String,
-    },
+      type: String
+    }
   },
   {
-    timestamps: true,
-  },
+    timestamps: true
+  }
 );
 
 // /**
@@ -36,7 +36,7 @@ userSchema.statics = {
           return user;
         }
       });
-  },
+  }
 };
 
 export default mongoose.model('User', userSchema);
