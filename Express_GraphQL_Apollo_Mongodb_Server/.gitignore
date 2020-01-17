@@ -1,3 +1,6 @@
 node_modules
 yarn.lock
 dist
+.env
+.env.development
+.env.production
