@@ -1,12 +1,13 @@
 import Promise from 'bluebird';
 import mongoose from 'mongoose';
+import config from './config';
 import Express from './config/express';
 
 // Promisify All The Mongoose
 Promise.promisifyAll(mongoose);
 
 // Connecting Mongo DB
-mongoose.connect(process.env.db, {
+mongoose.connect(config.db, {
   bufferMaxEntries: 0,
   keepAlive: true,
   reconnectInterval: 500,
@@ -17,19 +18,19 @@ mongoose.connect(process.env.db, {
 });
 
 mongoose.connection.on('error', () => {
-  throw new Error(`unable to connect to database: ${process.env.db}`);
+  throw new Error(`unable to connect to database: ${config.db}`);
 });
 
 const ExpressServer = new Express();
 ExpressServer.init();
 
 // listen on port
-ExpressServer.httpServer.listen(process.env.PORT || process.env.port, () => {
-  console.log(`🚀  Server ready at ${process.env.port}`);
+ExpressServer.httpServer.listen(process.env.PORT || config.port, () => {
+  console.log(`🚀  Server ready at ${config.port}`);
   console.log(
-    `🚀 Server ready at http://localhost:${process.env.port}${ExpressServer.server.graphqlPath}`
+    `🚀 Server ready at http://localhost:${config.port}${ExpressServer.server.graphqlPath}`
   );
   console.log(
-    `🚀 Subscriptions ready at ws://localhost:${process.env.port}${ExpressServer.server.subscriptionsPath}`
+    `🚀 Subscriptions ready at ws://localhost:${config.port}${ExpressServer.server.subscriptionsPath}`
   );
 });

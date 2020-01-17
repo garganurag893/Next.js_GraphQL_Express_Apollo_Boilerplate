@@ -1,5 +1,5 @@
 import * as jwt from 'jsonwebtoken';
-import config from '../../config/env';
+import config from '../../config';
 
 export default (req: any, res: any, next: any) => {
   const authHeader = req.get('Authorization');
