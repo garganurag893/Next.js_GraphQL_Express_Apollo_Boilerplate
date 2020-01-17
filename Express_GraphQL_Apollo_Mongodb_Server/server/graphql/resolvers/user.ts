@@ -1,10 +1,10 @@
-const User = require("../../models/user");
-const mongoose = require("mongoose");
-const { PubSub } = require("apollo-server");
-const { transformUser } = require("./merge");
+import User from '../../models/user';
+import * as mongoose from 'mongoose';
+import { PubSub } from 'apollo-server';
+import { transformUser } from './merge';
 const pubsub = new PubSub();
 
-const USER_ADDED="USER_ADDED";
+const USER_ADDED = 'USER_ADDED';
 
 const UserQueries = {
   users: async () => {
@@ -20,13 +20,13 @@ const UserQueries = {
 };
 
 const UserMutation = {
-  createUser: async (parent, { userInput }) => {
+  createUser: async (parent: any, { userInput }: any) => {
     try {
       const user = await User.findOne({
-        email: userInput.email
+        email: userInput.email,
       });
       if (user) {
-        throw new Error("User already Exists");
+        throw new Error('User already Exists');
       } else {
         const newUser = new User({
           _id: new mongoose.Types.ObjectId(),
@@ -36,7 +36,7 @@ const UserMutation = {
         });
         const savedUser = await newUser.save();
         pubsub.publish(USER_ADDED, {
-          userAdded: transformUser(savedUser)
+          userAdded: transformUser(savedUser),
         });
         return transformUser(savedUser);
       }
@@ -48,8 +48,8 @@ const UserMutation = {
 
 const UserSubscription = {
   userAdded: {
-    subscribe: () => pubsub.asyncIterator([USER_ADDED])
-  }
+    subscribe: () => pubsub.asyncIterator([USER_ADDED]),
+  },
 };
 
-module.exports = { UserQueries, UserMutation, UserSubscription };
+export { UserQueries, UserMutation, UserSubscription };

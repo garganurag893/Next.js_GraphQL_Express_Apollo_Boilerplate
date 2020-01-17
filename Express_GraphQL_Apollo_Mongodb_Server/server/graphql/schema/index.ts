@@ -1,5 +1,5 @@
-const { gql } = require("apollo-server-express");
-var resolvers = require("../resolvers/index");
+import { gql } from 'apollo-server-express';
+import resolvers from '../resolvers/index';
 
 const typeDefs = gql`
   type Query {
@@ -26,18 +26,18 @@ const typeDefs = gql`
   }
 `;
 
-module.exports = {
+const schema = {
   typeDefs,
   resolvers,
   introspection: true,
-  context: async ({ req, connection }) => {
+  context: async ({ req, connection }: any) => {
     if (connection) {
-      console.log("yes connected");
+      console.log('yes connected', req);
     }
   },
-  playground:
-    (true,
-    {
-      endpointURL: "/graphql"
-    })
+  playground: {
+    endpointURL: '/graphql',
+  },
 };
+
+export default schema;
