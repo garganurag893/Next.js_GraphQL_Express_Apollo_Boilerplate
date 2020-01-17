@@ -1,7 +1,7 @@
-import React from "react";
-import Router from "next/router";
-import { Mutation } from "@apollo/react-components";
-import CREATE_USER from "../src/graphql/mutation/user";
+import React from 'react';
+import Router from 'next/router';
+import { Mutation } from '@apollo/react-components';
+import CREATE_USER from '../src/graphql/mutation/user';
 
 interface SignUpState {
   [key: string]: any;
@@ -14,9 +14,9 @@ class SignUp extends React.PureComponent<any, SignUpState> {
   constructor(props) {
     super(props);
     this.state = {
-      name: "",
-      email: "",
-      password: ""
+      name: '',
+      email: '',
+      password: '',
     };
   }
 
@@ -30,10 +30,10 @@ class SignUp extends React.PureComponent<any, SignUpState> {
       const { state } = this;
       await createUser({
         variables: {
-          userInput: { ...state }
-        }
+          userInput: { ...state },
+        },
       });
-      Router.replace("/users");
+      Router.replace('/users');
     } catch (error) {
       throw error;
     }
@@ -47,8 +47,7 @@ class SignUp extends React.PureComponent<any, SignUpState> {
           {(createUser, { loading, error }) => (
             <form
               onSubmit={event => this.handleSubmit(createUser, event)}
-              className="signup-form"
-            >
+              className="signup-form">
               <input
                 type="text"
                 placeholder="Name"

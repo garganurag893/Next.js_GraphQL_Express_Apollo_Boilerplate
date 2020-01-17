@@ -1,14 +1,14 @@
-import React from "react";
-import { useQuery } from "@apollo/react-hooks";
-import List from "../src/components/List";
-import GET_USERS from "../src/graphql/query/user";
+import React from 'react';
+import { useQuery } from '@apollo/react-hooks';
+import List from '../src/components/List';
+import GET_USERS from '../src/graphql/query/user';
 
 const Users = () => {
   const { loading, error, data } = useQuery(GET_USERS);
-  let message = "Users";
-  if (loading) message = "Loading...";
+  let message = 'Users';
+  if (loading) message = 'Loading...';
   if (error) message = `Error! ${error.message}`;
-  if (data && data.users.length <= 0) message = "No Users";
+  if (data && data.users.length <= 0) message = 'No Users';
   return (
     <div className="container">
       <h1 className="heading">{message}</h1>

@@ -1,5 +1,5 @@
-import React from "react";
-import { UserCard } from "./Card";
+import React from 'react';
+import { UserCard } from './Card';
 
 interface User {
   name: string;
