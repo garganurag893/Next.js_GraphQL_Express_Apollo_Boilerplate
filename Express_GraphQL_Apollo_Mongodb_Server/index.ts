@@ -1,4 +1,4 @@
-import * as Promise from 'bluebird';
+import Promise from 'bluebird';
 import * as mongoose from 'mongoose';
 import config from './config/env';
 import Express from './config/express';

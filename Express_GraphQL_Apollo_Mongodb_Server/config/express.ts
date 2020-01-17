@@ -1,6 +1,6 @@
 import { ApolloServer } from 'apollo-server-express';
-import * as cors from 'cors';
-import * as express from 'express';
+import cors from 'cors';
+import express from 'express';
 import * as http from 'http';
 import schema from '../server/graphql/schema/index';
 
