@@ -9,8 +9,7 @@
     "prebuild": "tslint -c tslint.json -p tsconfig.json --fix",
     "build": "yarn clean && tsc",
     "prestart": "npm run build",
-    "dev": "NODE_ENV=development nodemon dist/index.ts",
-    "start": "nodemon dist/index.ts",
+    "start": "tsc --watch & nodemon dist/index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
