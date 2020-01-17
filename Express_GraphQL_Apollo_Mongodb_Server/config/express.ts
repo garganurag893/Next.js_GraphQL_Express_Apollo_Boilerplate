@@ -6,10 +6,9 @@ import schema from '../server/graphql/schema/index';
 
 class Express {
   public express: express.Application;
-  // @ts-ignore
   public server: ApolloServer = new ApolloServer(schema);
   public httpServer: http.Server;
-  public init = () => {
+  public init = (): void => {
     this.express = express();
     this.express.use(cors());
     this.server.applyMiddleware({ app: this.express });

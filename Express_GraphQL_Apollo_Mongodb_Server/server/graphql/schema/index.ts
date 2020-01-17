@@ -1,4 +1,5 @@
 import { gql } from 'apollo-server-express';
+import { ApolloServerExpressConfig } from 'apollo-server-express';
 import resolvers from '../resolvers/index';
 
 const typeDefs = gql`
@@ -26,7 +27,7 @@ const typeDefs = gql`
   }
 `;
 
-const schema = {
+const schema: ApolloServerExpressConfig = {
   typeDefs,
   resolvers,
   introspection: true,
@@ -35,9 +36,7 @@ const schema = {
       console.log('yes connected', req);
     }
   },
-  playground: {
-    endpointURL: '/graphql'
-  }
+  playground: true
 };
 
 export default schema;

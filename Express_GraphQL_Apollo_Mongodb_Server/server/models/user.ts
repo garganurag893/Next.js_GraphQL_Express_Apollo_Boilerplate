@@ -28,7 +28,7 @@ userSchema.statics = {
    * Get User
    * @param {ObjectId} id - The objectId of user.
    */
-  get(id: string) {
+  get(id: string): mongoose.Document {
     return this.findById(id)
       .execAsync()
       .then((user: any) => {
