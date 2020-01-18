@@ -33,7 +33,7 @@ class SignUp extends React.PureComponent<any, SignUpState> {
           userInput: { ...state },
         },
       });
-      Router.replace('/users');
+      Router.replace('/');
     } catch (error) {
       throw error;
     }

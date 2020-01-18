@@ -1,13 +1,28 @@
 import React from 'react';
-import { useQuery } from '@apollo/react-hooks';
 import List from '../src/components/List';
 import GET_USERS from '../src/graphql/query/user';
 
-const Users = () => {
-  const { loading, error, data } = useQuery(GET_USERS);
+interface User {
+  name: string;
+  _id: string;
+  email: string;
+}
+
+interface Data {
+  users: [User];
+}
+
+interface UserProps {
+  loading: boolean;
+  data: Data;
+  error: string;
+}
+
+const Users = (props: UserProps) => {
+  const { loading, error, data } = props;
   let message = 'Users';
   if (loading) message = 'Loading...';
-  if (error) message = `Error! ${error.message}`;
+  if (error) message = `Error! ${error}`;
   if (data && data.users.length <= 0) message = 'No Users';
   return (
     <div className="container">
@@ -68,6 +83,19 @@ const Users = () => {
       </style>
     </div>
   );
+};
+
+Users.getInitialProps = async ctx => {
+  try {
+    const { data, loading } = await ctx.apolloClient.query({
+      query: GET_USERS,
+    });
+    return { data, loading };
+  } catch (error) {
+    return {
+      error: 'Failed to fetch',
+    };
+  }
 };
 
 export default Users;
