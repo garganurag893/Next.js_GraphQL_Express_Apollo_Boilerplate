@@ -3,6 +3,7 @@ import cors from 'cors';
 import express from 'express';
 import * as http from 'http';
 import schema from '../server/graphql/schema/index';
+import auth from '../server/middleware/auth';
 
 class Express {
   public express: express.Application;
@@ -11,6 +12,7 @@ class Express {
   public init = (): void => {
     this.express = express();
     this.express.use(cors());
+    this.express.use(auth);
     this.server.applyMiddleware({ app: this.express });
     this.httpServer = http.createServer(this.express);
     this.server.installSubscriptionHandlers(this.httpServer);
