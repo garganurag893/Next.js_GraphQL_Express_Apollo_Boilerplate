@@ -1,10 +1,9 @@
-import React from "react";
-import { UserCard } from "./Card";
+import React from 'react';
+import { UserCard } from './Card';
 
 interface User {
   name: string;
   _id: string;
-  phoneNumber: string;
   email: string;
 }
 
@@ -17,7 +16,7 @@ const List: React.SFC<ListProps> = props => {
   return (
     <>
       {props.data.map((user: User) => (
-        <UserCard user={user} img={props.img} />
+        <UserCard key={user._id} user={user} img={props.img} />
       ))}
       <style jsx>
         {`

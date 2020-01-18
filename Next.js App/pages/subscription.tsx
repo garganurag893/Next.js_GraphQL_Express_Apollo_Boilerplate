@@ -1,15 +1,14 @@
-import React from "react";
-import { useSubscription } from "@apollo/react-hooks";
-import { UserCard } from "../src/components/Card";
-import USER_ADDED from "../src/graphql/subscription/users";
+import React from 'react';
+import { useSubscription } from '@apollo/react-hooks';
+import { UserCard } from '../src/components/Card';
+import USER_ADDED from '../src/graphql/subscription/users';
 
 const Users = () => {
   const { data, loading, error } = useSubscription(USER_ADDED);
-  console.log(data);
-  let message = "New User";
-  if (loading) message = "Listening...";
+  let message = 'New User';
+  if (loading) message = 'Listening...';
   if (error) message = `Error! ${error.message}`;
-  if (data && data.userAdded.length <= 0) message = "No New User Added";
+  if (data && data.userAdded.length <= 0) message = 'No New User Added';
   return (
     <div className="container">
       <h1 className="heading">{message}</h1>

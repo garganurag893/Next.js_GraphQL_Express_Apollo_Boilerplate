@@ -1,4 +1,4 @@
-import gql from "graphql-tag";
+import gql from 'graphql-tag';
 
 const CREATE_USER = gql`
   mutation createUser($userInput: UserInput) {
