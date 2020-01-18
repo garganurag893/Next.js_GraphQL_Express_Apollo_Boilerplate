@@ -168,7 +168,7 @@ Reach out to me at one of the following places!
 
 It will be truely helpful if you donate me.
 
-[![Support via Gratipay](https://cdn.rawgit.com/gratipay/gratipay-badge/2.3.0/dist/gratipay.png)](https://paypal.me/garganurag893?locale.x=en_GB)
+[![Support via Paypal](https://www.paypalobjects.com/webstatic/mktg/Logo/pp-logo-200px.png)](https://paypal.me/garganurag893?locale.x=en_GB)
 
 ---
 
