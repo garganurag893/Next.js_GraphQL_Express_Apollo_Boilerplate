@@ -66,7 +66,14 @@ const UserMutation = {
         pubsub.publish(USER_ADDED, {
           userAdded: transformUser(savedUser)
         });
-        return transformUser(savedUser);
+        const token = jwt.sign({ userId: savedUser.id }, config.jwtSecret, {
+          expiresIn: '1h'
+        });
+        return {
+          userId: savedUser.id,
+          token,
+          tokenExpiration: 1
+        };
       }
     } catch (error) {
       throw error;

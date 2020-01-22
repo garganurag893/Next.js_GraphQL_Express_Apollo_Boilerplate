@@ -4,6 +4,7 @@ import { toast } from 'react-toastify';
 import { ApolloConsumer } from 'react-apollo';
 import LOGIN_USER from '../graphql/query/login';
 import { validateEmail } from '../utils/validation';
+import { setToken } from '../configureClient';
 
 interface LoginState {
   [key: string]: any;
@@ -33,6 +34,7 @@ class Login extends React.PureComponent<any, LoginState> {
           query: LOGIN_USER,
           variables: { ...state },
         });
+        setToken(data.login.token);
         Router.replace('/welcome');
       } else {
         toast.error('Invalid Email');

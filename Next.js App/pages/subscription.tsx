@@ -2,6 +2,7 @@ import React from 'react';
 import { useSubscription } from '@apollo/react-hooks';
 import { UserCard } from '../src/components/Card';
 import USER_ADDED from '../src/graphql/subscription/users';
+import { withAuthSync } from '../src/utils/auth';
 
 const Users = () => {
   const { data, loading, error } = useSubscription(USER_ADDED);
@@ -70,4 +71,4 @@ const Users = () => {
   );
 };
 
-export default Users;
+export default withAuthSync(Users);

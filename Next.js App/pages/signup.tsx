@@ -1,7 +1,10 @@
 import React from 'react';
 import Router from 'next/router';
+import { toast } from 'react-toastify';
 import { Mutation } from '@apollo/react-components';
 import CREATE_USER from '../src/graphql/mutation/user';
+import { setToken } from '../src/configureClient';
+import { validateEmail } from '../src/utils/validation';
 
 interface SignUpState {
   [key: string]: any;
@@ -28,14 +31,20 @@ class SignUp extends React.PureComponent<any, SignUpState> {
     try {
       event.preventDefault();
       const { state } = this;
-      await createUser({
-        variables: {
-          userInput: { ...state },
-        },
-      });
-      Router.replace('/');
+      if (validateEmail(state.email)) {
+        const data = await createUser({
+          variables: {
+            userInput: { ...state },
+          },
+        });
+        const { token, userId } = data.createUser;
+        setToken(token);
+        Router.replace('/welcome');
+      } else {
+        toast.error('Invalid Email');
+      }
     } catch (error) {
-      throw error;
+      toast.error('Check your connection');
     }
   };
   render() {

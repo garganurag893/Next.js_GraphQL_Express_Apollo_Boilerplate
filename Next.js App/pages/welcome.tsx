@@ -1,5 +1,6 @@
 import React from 'react';
 import Card from '../src/components/Card';
+import { withAuthSync } from '../src/utils/auth';
 
 const Welcome: React.SFC = () => {
   return (
@@ -63,4 +64,4 @@ const Welcome: React.SFC = () => {
   );
 };
 
-export default Welcome;
+export default withAuthSync(Welcome);
