@@ -27,28 +27,26 @@ const authMiddleware = new ApolloLink((operation, forward) => {
       authorization: authToken || null,
     },
   });
+  // Add onto payload for WebSocket authentication
+  (operation as any & { authToken: string | undefined }).authToken = authToken;
 
   return forward(operation);
 });
 
 const webSocketLink: any = process.browser
   ? new WebSocketLink({
-      uri: WEB_SOCKET_LINK,
-      options: {
-        reconnect: true,
-      },
-    })
+    uri: WEB_SOCKET_LINK,
+    options: {
+      reconnect: true,
+    },
+  })
   : null;
 
 // Set the token
 export const setToken = async token => {
   try {
-    let autorizationToken = token ? `Bearer ${token}` : null;
-    authToken = autorizationToken;
-    webSocketLink.subscriptionClient.connectionParams = () => ({
-      Authorization: authToken || null,
-    });
-    Cookies.set('token', autorizationToken, { expires: 7 });
+    authToken = token ? `Bearer ${token}` : null;
+    Cookies.set('token', authToken, { expires: 7 });
   } catch (error) {
     console.log(error);
   }
@@ -58,9 +56,6 @@ export const setToken = async token => {
 export const setTokenInRequest = async token => {
   try {
     authToken = token ? token : null;
-    webSocketLink.subscriptionClient.connectionParams = () => ({
-      Authorization: authToken,
-    });
     return authToken;
   } catch (error) {
     console.log(error);
@@ -79,13 +74,13 @@ export const destroyToken = async () => {
 
 const link = process.browser
   ? split(
-      ({ query }) => {
-        const { kind, operation }: Definintion = getMainDefinition(query);
-        return kind === 'OperationDefinition' && operation === 'subscription';
-      },
-      webSocketLink,
-      httpLink
-    )
+    ({ query }) => {
+      const { kind, operation }: Definintion = getMainDefinition(query);
+      return kind === 'OperationDefinition' && operation === 'subscription';
+    },
+    webSocketLink,
+    httpLink
+  )
   : httpLink;
 
 export default withApollo(

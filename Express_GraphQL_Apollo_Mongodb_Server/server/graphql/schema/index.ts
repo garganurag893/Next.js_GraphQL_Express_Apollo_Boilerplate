@@ -44,10 +44,9 @@ const schema: ApolloServerExpressConfig = {
   typeDefs,
   resolvers,
   introspection: true,
-  context: async ({ req, connection, headers }: any) => {
+  context: async ({ req, connection, payload }: any) => {
     if (connection) {
-      console.log('New Subscriber Connected', connection.context.authToken);
-      return { isAuth: false };
+      return { isAuth: payload.authToken };
     }
     return { isAuth: req.isAuth };
   },
