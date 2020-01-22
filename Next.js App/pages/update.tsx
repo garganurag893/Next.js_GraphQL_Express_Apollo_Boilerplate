@@ -2,18 +2,18 @@ import React from 'react';
 import Router from 'next/router';
 import { toast } from 'react-toastify';
 import { Mutation } from '@apollo/react-components';
-import CREATE_USER from '../src/graphql/mutation/createUser';
-import { setToken } from '../src/configureClient';
 import { validateEmail } from '../src/utils/validation';
+import UPDATE_USER from '../src/graphql/mutation/updateUser';
+import { withAuthSync } from '../src/utils/auth';
 
-interface SignUpState {
+interface UpdateState {
   [key: string]: any;
   name: string;
   email: string;
   password: string;
 }
 
-class SignUp extends React.PureComponent<any, SignUpState> {
+class Update extends React.PureComponent<any, UpdateState> {
   constructor(props) {
     super(props);
     this.state = {
@@ -27,19 +27,19 @@ class SignUp extends React.PureComponent<any, SignUpState> {
     this.setState({ [event.target.name]: event.target.value });
   };
 
-  handleSubmit = async (createUser, event) => {
+  handleSubmit = async (updateUser, event) => {
     try {
       event.preventDefault();
       const { state } = this;
       if (validateEmail(state.email)) {
-        const data = await createUser({
+        await updateUser({
           variables: {
-            userInput: { ...state },
+            userId: 1,
+            updateUser: { ...state },
           },
         });
-        const { token, userId } = data.createUser;
-        setToken(token);
-        Router.replace('/welcome');
+        toast.success('Profile Updated');
+        Router.push('/welcome');
       } else {
         toast.error('Invalid Email');
       }
@@ -51,19 +51,19 @@ class SignUp extends React.PureComponent<any, SignUpState> {
     const { state } = this;
     return (
       <div className="container">
-        <h1 className="heading">Sign Up</h1>
-        <Mutation mutation={CREATE_USER}>
-          {(createUser, { loading, error }) => (
+        <h1 className="heading">Update Profile</h1>
+        <Mutation mutation={UPDATE_USER}>
+          {updateUser => (
             <form
-              onSubmit={event => this.handleSubmit(createUser, event)}
-              className="signup-form">
+              onSubmit={event => this.handleSubmit(updateUser, event)}
+              className="update-form">
               <input
                 type="text"
                 placeholder="Name"
                 name="name"
                 value={state.name}
                 onChange={this.handleChange}
-                className="signup-input-box"
+                className="update-input-box"
                 required
               />
               <input
@@ -72,7 +72,7 @@ class SignUp extends React.PureComponent<any, SignUpState> {
                 name="email"
                 value={state.email}
                 onChange={this.handleChange}
-                className="signup-input-box"
+                className="update-input-box"
                 required
               />
               <input
@@ -81,10 +81,10 @@ class SignUp extends React.PureComponent<any, SignUpState> {
                 name="password"
                 value={state.password}
                 onChange={this.handleChange}
-                className="signup-input-box"
+                className="update-input-box"
                 required
               />
-              <input type="submit" value="Submit" className="signup-button" />
+              <input type="submit" value="Submit" className="update-button" />
             </form>
           )}
         </Mutation>
@@ -111,7 +111,7 @@ class SignUp extends React.PureComponent<any, SignUpState> {
               justify-content: center;
               align-items: center;
             }
-            .signup-input-box {
+            .update-input-box {
               background-color: white;
               border-radius: 14px 0px 14px 1px;
               -moz-border-radius: 14px 0px 14px 1px;
@@ -125,7 +125,7 @@ class SignUp extends React.PureComponent<any, SignUpState> {
               margin-bottom: 2rem;
               font-family: Candara;
             }
-            .signup-button {
+            .update-button {
               background-color: white;
               border-radius: 14px 0px 14px 1px;
               -moz-border-radius: 14px 0px 14px 1px;
@@ -141,7 +141,7 @@ class SignUp extends React.PureComponent<any, SignUpState> {
               transition: transform 0.2s;
               cursor: pointer;
             }
-            .signup-button:hover {
+            .update-button:hover {
               transform: scale(1.1);
               background: #355c7d;
               background: -webkit-linear-gradient(
@@ -187,4 +187,4 @@ class SignUp extends React.PureComponent<any, SignUpState> {
   }
 }
 
-export default SignUp;
+export default withAuthSync(Update);
