@@ -5,6 +5,7 @@ import { ApolloConsumer } from 'react-apollo';
 import LOGIN_USER from '../graphql/query/login';
 import { validateEmail } from '../utils/validation';
 import { setToken } from '../configureClient';
+import Cookies from 'js-cookie';
 
 interface LoginState {
   [key: string]: any;
@@ -34,7 +35,9 @@ class Login extends React.PureComponent<any, LoginState> {
           query: LOGIN_USER,
           variables: { ...state },
         });
-        setToken(data.login.token);
+        const { token, userId } = data.login;
+        setToken(token);
+        Cookies.set('userId', userId, { expires: 7 });
         Router.replace('/welcome');
       } else {
         toast.error('Invalid Email');

@@ -1,6 +1,7 @@
 import React from 'react';
 import Router from 'next/router';
 import { toast } from 'react-toastify';
+import Cookies from 'js-cookie';
 import { Mutation } from '@apollo/react-components';
 import CREATE_USER from '../src/graphql/mutation/createUser';
 import { setToken } from '../src/configureClient';
@@ -39,6 +40,7 @@ class SignUp extends React.PureComponent<any, SignUpState> {
         });
         const { token, userId } = data.createUser;
         setToken(token);
+        Cookies.set('userId', userId, { expires: 7 });
         Router.replace('/welcome');
       } else {
         toast.error('Invalid Email');

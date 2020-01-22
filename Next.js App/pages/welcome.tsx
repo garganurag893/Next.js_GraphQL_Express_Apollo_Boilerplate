@@ -8,7 +8,7 @@ const Welcome: React.SFC = () => {
       <h1 className="heading">Welcome</h1>
       <div className="cardContainer">
         <Card title="Query" href="/users" />
-        <Card title="Mutation" href="/signup" />
+        <Card title="Mutation" href="/update" />
         <Card title="Subscription" href="/subscription" />
       </div>
       <style jsx>

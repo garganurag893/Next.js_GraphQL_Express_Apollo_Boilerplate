@@ -30,11 +30,11 @@ class Update extends React.PureComponent<any, UpdateState> {
   handleSubmit = async (updateUser, event) => {
     try {
       event.preventDefault();
-      const { state } = this;
+      const { state, props } = this;
       if (validateEmail(state.email)) {
         await updateUser({
           variables: {
-            userId: 1,
+            userId: props.userId,
             updateUser: { ...state },
           },
         });
@@ -44,6 +44,7 @@ class Update extends React.PureComponent<any, UpdateState> {
         toast.error('Invalid Email');
       }
     } catch (error) {
+      console.log(error);
       toast.error('Check your connection');
     }
   };

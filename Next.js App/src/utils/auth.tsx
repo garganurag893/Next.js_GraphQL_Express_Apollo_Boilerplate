@@ -7,7 +7,7 @@ const getDisplayName = Component =>
   Component.displayName || Component.name || 'Component';
 
 export const auth = ctx => {
-  const { token } = nextCookie(ctx);
+  const { token, userId } = nextCookie(ctx);
 
   if (ctx.req && !token) {
     ctx.res.writeHead(302, { Location: '/' });
@@ -19,7 +19,7 @@ export const auth = ctx => {
     Router.push('/');
   }
 
-  return token;
+  return { token, userId };
 };
 
 export const withAuthSync = WrappedComponent =>
@@ -27,13 +27,13 @@ export const withAuthSync = WrappedComponent =>
     static displayName = `withAuthSync(${getDisplayName(WrappedComponent)})`;
 
     static async getInitialProps(ctx) {
-      const token = auth(ctx);
+      const { token, userId } = auth(ctx);
       await setTokenInRequest(token);
       const componentProps =
         WrappedComponent.getInitialProps &&
         (await WrappedComponent.getInitialProps(ctx));
 
-      return { ...componentProps, token };
+      return { ...componentProps, token, userId };
     }
 
     render() {
