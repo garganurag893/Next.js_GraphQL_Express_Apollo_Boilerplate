@@ -1,11 +1,15 @@
 import React from 'react';
-import Login from '../src/components/Login';
+import Card from '../src/components/Card';
 
-const Home: React.SFC = () => {
+const Welcome: React.SFC = () => {
   return (
     <div className="container">
       <h1 className="heading">Welcome</h1>
-      <Login />
+      <div className="cardContainer">
+        <Card title="Query" href="/users" />
+        <Card title="Mutation" href="/signup" />
+        <Card title="Subscription" href="/subscription" />
+      </div>
       <style jsx>
         {`
           .container {
@@ -15,13 +19,19 @@ const Home: React.SFC = () => {
             display: flex;
             justify-content: center;
             align-items: center;
-            flex-flow: row wrap;
+            flex-flow: column wrap;
+          }
+          .cardContainer {
+            display: flex;
+            flex-flow: wrap row;
+            justify-content: center;
+            align-items: center;
           }
           .heading {
             color: white;
             text-align: center;
             font-size: 5rem;
-            padding: 2rem;
+            padding: 0rem 0 5rem;
           }
         `}
       </style>
@@ -53,4 +63,4 @@ const Home: React.SFC = () => {
   );
 };
 
-export default Home;
+export default Welcome;

@@ -124,6 +124,7 @@ class SignUp extends React.PureComponent<any, SignUpState> {
               border: 0px solid #000000;
               box-shadow: 0 20px 30px -16px rgba(9, 9, 16, 0.2);
               width: 15rem;
+              font-size: 0.9rem;
               padding: 0.5rem;
               height: 3rem;
               margin: 2rem;
