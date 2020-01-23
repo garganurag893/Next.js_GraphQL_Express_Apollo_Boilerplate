@@ -10,11 +10,19 @@
     "build": "yarn clean && tsc",
     "prestart": "yarn build",
     "start": "tsc --watch & nodemon dist/index.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "pre-commit": "yarn tslint && yarn tslint:fix && yarn build",
+    "tslint": "tslint --project tsconfig.json",
+    "tslint:fix": "tslint --project tsconfig.json --fix"
   },
   "keywords": [],
   "author": "Anurag Garg",
   "license": "MIT",
+  "husky": {
+    "hooks": {
+      "pre-commit": "yarn pre-commit"
+    }
+  },
   "dependencies": {
     "apollo-server": "^2.9.6",
     "apollo-server-express": "^2.9.6",
@@ -33,6 +41,7 @@
     "@types/lodash": "^4.14.149",
     "@types/mongoose": "^5.5.41",
     "@types/node": "^13.1.7",
+    "husky": "^4.2.0",
     "nodemon": "^1.19.2",
     "tslint": "^5.20.1",
     "typescript": "^3.7.5"
