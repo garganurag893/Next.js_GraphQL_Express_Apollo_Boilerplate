@@ -35,11 +35,11 @@ const authMiddleware = new ApolloLink((operation, forward) => {
 
 const webSocketLink: any = process.browser
   ? new WebSocketLink({
-    uri: WEB_SOCKET_LINK,
-    options: {
-      reconnect: true,
-    },
-  })
+      uri: WEB_SOCKET_LINK,
+      options: {
+        reconnect: true,
+      },
+    })
   : null;
 
 // Set the token
@@ -74,13 +74,13 @@ export const destroyToken = async () => {
 
 const link = process.browser
   ? split(
-    ({ query }) => {
-      const { kind, operation }: Definintion = getMainDefinition(query);
-      return kind === 'OperationDefinition' && operation === 'subscription';
-    },
-    webSocketLink,
-    httpLink
-  )
+      ({ query }) => {
+        const { kind, operation }: Definintion = getMainDefinition(query);
+        return kind === 'OperationDefinition' && operation === 'subscription';
+      },
+      webSocketLink,
+      httpLink
+    )
   : httpLink;
 
 export default withApollo(

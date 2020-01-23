@@ -5,7 +5,8 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "lint": "eslint './**/*.{ts,js,tsx}'"
   },
   "author": "Anurag Garg",
   "license": "MIT",
@@ -15,9 +16,10 @@
     }
   },
   "lint-staged": {
-    "./src/*.{js,jsx,ts,tsx}": [
-      "npx prettier --write",
-      "eslint src/*.js --fix-dry-run"
+    "./**/*.{js,jsx,ts,tsx,css,scss}": [
+      "prettier --write",
+      "yarn lint",
+      "git add"
     ]
   },
   "dependencies": {
