@@ -1,3 +1,8 @@
+/**
+ * Auth Middlerware Component
+ * @author Anurag Garg <garganurag893@gmail.com>
+ */
+
 import * as React from 'react';
 import Router from 'next/router';
 import nextCookie from 'next-cookies';

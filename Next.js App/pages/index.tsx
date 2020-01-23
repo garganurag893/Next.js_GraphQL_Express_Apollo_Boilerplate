@@ -1,3 +1,8 @@
+/**
+ * Main Page
+ * @author Anurag Garg <garganurag893@gmail.com>
+ */
+
 import React from 'react';
 import Login from '../src/components/Login';
 

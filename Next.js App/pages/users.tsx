@@ -1,3 +1,8 @@
+/**
+ * User List Page
+ * @author Anurag Garg <garganurag893@gmail.com>
+ */
+
 import React from 'react';
 import List from '../src/components/List';
 import GET_USERS from '../src/graphql/query/user';

@@ -1,3 +1,8 @@
+/**
+ * Login Component
+ * @author Anurag Garg <garganurag893@gmail.com>
+ */
+
 import React from 'react';
 import Router from 'next/router';
 import { toast } from 'react-toastify';

@@ -1,3 +1,8 @@
+/**
+ * Login user query
+ * @author Anurag Garg <garganurag893@gmail.com>
+ */
+
 import gql from 'graphql-tag';
 
 const LOGIN_USER = gql`

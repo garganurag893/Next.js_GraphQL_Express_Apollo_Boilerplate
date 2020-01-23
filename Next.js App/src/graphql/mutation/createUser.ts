@@ -1,3 +1,8 @@
+/**
+ * Create User Mutation
+ * @author Anurag Garg <garganurag893@gmail.com>
+ */
+
 import gql from 'graphql-tag';
 
 const CREATE_USER = gql`

@@ -1,3 +1,8 @@
+/**
+ * Welcome Page
+ * @author Anurag Garg <garganurag893@gmail.com>
+ */
+
 import React from 'react';
 import Card from '../src/components/Card';
 import { withAuthSync } from '../src/utils/auth';

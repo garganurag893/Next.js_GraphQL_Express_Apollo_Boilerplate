@@ -1,3 +1,8 @@
+/**
+ * Update user mutation
+ * @author Anurag Garg <garganurag893@gmail.com>
+ */
+
 import gql from 'graphql-tag';
 
 const UPDATE_USER = gql`

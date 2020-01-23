@@ -1,3 +1,8 @@
+/**
+ * App Configuration
+ * @author Anurag Garg <garganurag893@gmail.com>
+ */
+
 import React from 'react';
 import App from 'next/app';
 import { ApolloProvider } from '@apollo/react-hooks';

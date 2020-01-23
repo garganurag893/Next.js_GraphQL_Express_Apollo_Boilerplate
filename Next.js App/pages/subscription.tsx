@@ -1,3 +1,8 @@
+/**
+ * Subscription Page
+ * @author Anurag Garg <garganurag893@gmail.com>
+ */
+
 import React from 'react';
 import { useSubscription } from '@apollo/react-hooks';
 import { UserCard } from '../src/components/Card';

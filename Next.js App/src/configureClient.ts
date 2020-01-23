@@ -1,3 +1,8 @@
+/**
+ * Apollo Client Configuration
+ * @author Anurag Garg <garganurag893@gmail.com>
+ */
+
 import { ApolloClient } from 'apollo-client';
 import { split, ApolloLink, concat } from 'apollo-link';
 import { InMemoryCache } from 'apollo-cache-inmemory';
@@ -42,8 +47,11 @@ const webSocketLink: any = process.browser
     })
   : null;
 
-// Set the token
-export const setToken = async token => {
+/**
+ * Set Token
+ * @param token
+ */
+export const setToken = async (token: string) => {
   try {
     authToken = token ? `Bearer ${token}` : null;
     Cookies.set('token', authToken, { expires: 7 });
@@ -52,8 +60,11 @@ export const setToken = async token => {
   }
 };
 
-// Set the token in request
-export const setTokenInRequest = async token => {
+/**
+ * Set Token In Request
+ * @param token
+ */
+export const setTokenInRequest = async (token: string) => {
   try {
     authToken = token ? token : null;
     return authToken;
@@ -62,7 +73,10 @@ export const setTokenInRequest = async token => {
   }
 };
 
-// Destroy token
+/**
+ * Destroy Token
+ * For logout purpose
+ */
 export const destroyToken = async () => {
   try {
     Cookies.remove('token');
