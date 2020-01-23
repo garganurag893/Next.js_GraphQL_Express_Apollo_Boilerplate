@@ -11,7 +11,7 @@
     "prestart": "yarn build",
     "start": "tsc --watch & nodemon dist/index.js",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "pre-commit": "yarn tslint && yarn tslint:fix && yarn build",
+    "pre-commit": "yarn tslint && yarn build",
     "tslint": "tslint --project tsconfig.json",
     "tslint:fix": "tslint --project tsconfig.json --fix"
   },
