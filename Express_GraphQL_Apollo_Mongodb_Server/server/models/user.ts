@@ -1,5 +1,13 @@
+/**
+ * Define model for user
+ * @author Anurag Garg <garganurag893@gmail.com>
+ */
+
 import mongoose from 'mongoose';
 
+/**
+ * User Schema
+ */
 const userSchema = new mongoose.Schema(
   {
     _id: mongoose.Schema.Types.ObjectId,
@@ -20,9 +28,9 @@ const userSchema = new mongoose.Schema(
   }
 );
 
-// /**
-//  * Statics
-//  */
+/**
+ * Statics
+ */
 userSchema.statics = {
   /**
    * Get User

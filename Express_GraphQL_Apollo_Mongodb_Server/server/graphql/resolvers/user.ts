@@ -1,3 +1,8 @@
+/**
+ * File containing all user queries, mutations and subscriptions
+ * @author Anurag Garg <garganurag893@gmail.com>
+ */
+
 import { PubSub } from 'apollo-server';
 import jwt from 'jsonwebtoken';
 import mongoose from 'mongoose';
@@ -8,6 +13,9 @@ const pubsub = new PubSub();
 
 const USER_ADDED = 'USER_ADDED';
 
+/**
+ * User Queries
+ */
 const UserQueries = {
   users: async (parent, args, context) => {
     try {
@@ -47,6 +55,9 @@ const UserQueries = {
   }
 };
 
+/**
+ * User Mutations
+ */
 const UserMutation = {
   createUser: async (parent: any, { userInput }: any) => {
     try {
@@ -80,6 +91,7 @@ const UserMutation = {
     }
   },
   updateUser: async (parent, { userId, updateUser }, context) => {
+    // If not authenticated throw error
     if (!context.isAuth) {
       throw new Error('Non Authenticated');
     }
@@ -94,6 +106,9 @@ const UserMutation = {
   }
 };
 
+/**
+ * User Subscriptions
+ */
 const UserSubscription = {
   userAdded: {
     subscribe: () => pubsub.asyncIterator([USER_ADDED])

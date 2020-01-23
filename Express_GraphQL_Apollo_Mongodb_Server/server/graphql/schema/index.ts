@@ -1,3 +1,8 @@
+/**
+ * Primary file for GraphQL Schema
+ * @author Anurag Garg <garganurag893@gmail.com>
+ */
+
 import { gql } from 'apollo-server-express';
 import { ApolloServerExpressConfig } from 'apollo-server-express';
 import resolvers from '../resolvers/index';

@@ -1,3 +1,8 @@
+/**
+ * Define middlerware for extracting authToken
+ * @author Anurag Garg <garganurag893@gmail.com>
+ */
+
 import * as jwt from 'jsonwebtoken';
 import config from '../../config';
 
@@ -12,7 +17,7 @@ export default (req: any, res: any, next: any) => {
     req.isAuth = false;
     return next();
   }
-  let decodedToken;
+  let decodedToken: any;
   try {
     decodedToken = jwt.verify(token, config.jwtSecret);
   } catch (err) {
@@ -24,7 +29,6 @@ export default (req: any, res: any, next: any) => {
     return next();
   }
   req.isAuth = true;
-  // @ts-ignore
   req.userId = decodedToken.userId;
   return next();
 };
