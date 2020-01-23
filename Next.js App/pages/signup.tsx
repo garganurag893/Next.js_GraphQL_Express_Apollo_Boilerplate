@@ -6,6 +6,7 @@
 import React from 'react';
 import Router from 'next/router';
 import { toast } from 'react-toastify';
+import Footer from '../src/components/Footer';
 import Cookies from 'js-cookie';
 import { Mutation } from '@apollo/react-components';
 import CREATE_USER from '../src/graphql/mutation/createUser';
@@ -95,6 +96,7 @@ class SignUp extends React.PureComponent<any, SignUpState> {
             </form>
           )}
         </Mutation>
+        <Footer />
         <style jsx>
           {`
             .container {
@@ -110,7 +112,7 @@ class SignUp extends React.PureComponent<any, SignUpState> {
               color: white;
               text-align: center;
               font-size: 5rem;
-              padding: 0rem 0 5rem;
+              padding: 5rem 0rem;
             }
             form {
               display: flex;

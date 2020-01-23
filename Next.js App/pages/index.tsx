@@ -5,28 +5,40 @@
 
 import React from 'react';
 import Login from '../src/components/Login';
+import Footer from '../src/components/Footer';
 
 const Home: React.SFC = () => {
   return (
-    <div className="container">
-      <h1 className="heading">Welcome</h1>
-      <Login />
+    <div className="mainContainer">
+      <div className="container">
+        <h1 className="heading">Welcome</h1>
+        <Login />
+      </div>
+      <Footer />
       <style jsx>
         {`
-          .container {
+          .mainContainer {
             height: 100%;
             min-height: 100vh;
             width: 100%;
+          }
+          .container {
             display: flex;
             justify-content: center;
             align-items: center;
             flex-flow: row wrap;
+            padding: 8rem 0rem !important;
           }
           .heading {
             color: white;
             text-align: center;
             font-size: 5rem;
             padding: 2rem;
+          }
+          @media only screen and (max-width: 740px) {
+            .container {
+              padding: 3rem 0rem !important;
+            }
           }
         `}
       </style>

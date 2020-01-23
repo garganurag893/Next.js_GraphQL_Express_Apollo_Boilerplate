@@ -5,6 +5,7 @@
 
 import React from 'react';
 import Card from '../src/components/Card';
+import Footer from '../src/components/Footer';
 import { withAuthSync } from '../src/utils/auth';
 
 const Welcome: React.SFC = () => {
@@ -16,6 +17,7 @@ const Welcome: React.SFC = () => {
         <Card title="Mutation" href="/update" />
         <Card title="Subscription" href="/subscription" />
       </div>
+      <Footer />
       <style jsx>
         {`
           .container {
@@ -37,7 +39,7 @@ const Welcome: React.SFC = () => {
             color: white;
             text-align: center;
             font-size: 5rem;
-            padding: 0rem 0 5rem;
+            padding: 6rem 0rem;
           }
         `}
       </style>

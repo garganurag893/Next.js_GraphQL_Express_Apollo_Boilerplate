@@ -6,6 +6,7 @@
 import React from 'react';
 import Router from 'next/router';
 import { toast } from 'react-toastify';
+import Footer from '../src/components/Footer';
 import { Mutation } from '@apollo/react-components';
 import { validateEmail } from '../src/utils/validation';
 import UPDATE_USER from '../src/graphql/mutation/updateUser';
@@ -49,7 +50,6 @@ class Update extends React.PureComponent<any, UpdateState> {
         toast.error('Invalid Email');
       }
     } catch (error) {
-      console.log(error);
       toast.error('Check your connection');
     }
   };
@@ -94,6 +94,7 @@ class Update extends React.PureComponent<any, UpdateState> {
             </form>
           )}
         </Mutation>
+        <Footer />
         <style jsx>
           {`
             .container {
@@ -109,7 +110,7 @@ class Update extends React.PureComponent<any, UpdateState> {
               color: white;
               text-align: center;
               font-size: 5rem;
-              padding: 0rem 0 5rem;
+              padding: 5rem 0rem;
             }
             form {
               display: flex;
