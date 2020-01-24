@@ -4,9 +4,10 @@
 
 <h1 align="center">Next.js GraphQL Express Apollo Boilerplate</h1>
 
-Building server-side rendered react website is hard, next.js commits to solving this problem beautifully. In this post, we will make a next.js app with basic auth functionality using GraphQL.
+<p align="center">Building server-side rendered react website is hard, next.js commits to solving this problem beautifully. In this post, we will make a next.js app with basic auth functionality using GraphQL.
+</p>
 
-[![Build Status](http://img.shields.io/travis/badges/badgerbadgerbadger.svg?style=flat-square)](https://travis-ci.org/badges/badgerbadgerbadger) [![Coverage Status](http://img.shields.io/coveralls/badges/badgerbadgerbadger.svg?style=flat-square)](https://coveralls.io/r/badges/badgerbadgerbadger) [![Github Issues](https://img.shields.io/github/issues/garganurag893/Next.js_GraphQL_Express_Apollo_Boilerplate)](https://img.shields.io/github/issues/garganurag893/Next.js_GraphQL_Express_Apollo_Boilerplate) [![Pending Pull-Requests](https://img.shields.io/github/issues-pr/garganurag893/Next.js_GraphQL_Express_Apollo_Boilerplate)](https://img.shields.io/github/issues-pr/garganurag893/Next.js_GraphQL_Express_Apollo_Boilerplate) [![License](http://img.shields.io/:license-mit-blue.svg?style=flat-square)](http://badges.mit-license.org)
+[![Build Status](http://img.shields.io/travis/badges/badgerbadgerbadger.svg?style=flat-square)](https://travis-ci.org/badges/badgerbadgerbadger) [![Github Issues](https://img.shields.io/github/issues/garganurag893/Next.js_GraphQL_Express_Apollo_Boilerplate)](https://img.shields.io/github/issues/garganurag893/Next.js_GraphQL_Express_Apollo_Boilerplate) [![Pending Pull-Requests](https://img.shields.io/github/issues-pr/garganurag893/Next.js_GraphQL_Express_Apollo_Boilerplate)](https://img.shields.io/github/issues-pr/garganurag893/Next.js_GraphQL_Express_Apollo_Boilerplate) [![License](http://img.shields.io/:license-mit-blue.svg?style=flat-square)](http://badges.mit-license.org)
 
 ---
 
@@ -18,14 +19,22 @@ Building server-side rendered react website is hard, next.js commits to solving 
   - [Step 2: Set up Env](#step-2-set-up-env)
   - [Step 3: Install dependencies](#step-3-install-dependencies)
   - [Step 4: Running Locally](#step-4-running-locally)
-  - [Step 5: Running Locally](#step-5-running-locally)
+  - [Step 5: Deployment](#step-5-deployment)
 - [Features](#features)
-- [Tests](#tests)
+  - [GraphQL](#graphql)
+  - [Express](#express)
+  - [Next.js](#nextjs)
+  - [React Apollo](#react-apollo)
+  - [Typescript](#typescript)
+  - [JsonWebToken](#jsonwebtoken)
+  - [TSLint](#tslint)
+  - [Husky](#husky)
+  - [Bluebird](#bluebird)
+  - [Cors](#cors)
 - [Contributing](#contributing)
   - [Step 1](#step-1)
   - [Step 2](#step-2)
   - [Step 3](#step-3)
-- [FAQ](#faq)
 - [Support](#support)
 - [Donations](#donations)
 - [License](#license)
@@ -94,32 +103,72 @@ Now navigate to **Nextjs App** directory and run the below command in your termi
 $ yarn dev
 ```
 
-### Step 5: Running Locally
+### Step 5: Deployment
+
+To deploy with ZEIT Now through your terminal, you will need to install Now CLI, a frequently updated, and open-source, command-line interface.
+
+You can get Now CLI from either npm or Yarn. Using npm, run the following command from your terminal:
+```bash
+$ npm i -g now
+```
+
+To verify that you have installed Now CLI, try running now help from your terminal.
+
+With Now CLI installed, you can now login using the following command:
+```bash
+$ now login
+```
 
 Navigate to **Nextjs App** directory and run the below commands in order :
 
 ```bash
-$ yarn build
+$ now
 ```
 
-After a successful build, run command:
-
-```bash
-$ yarn start
-```
+Once deployed, you will get a preview URL that is assigned on each deployment to share the latest changes under the same address.
 
 ---
 
 ## Features
 
-- React Apollo
+### GraphQL
+
+GraphQL is a query language for APIs and a runtime for fulfilling those queries with your existing data. GraphQL provides a complete and understandable description of the data in your API, gives clients the power to ask for exactly what they need and nothing more, makes it easier to evolve APIs over time, and enables powerful developer tools.
+
+### Express
+
+Express is a minimal and flexible Node.js web application framework that provides a robust set of features for web and mobile applications.
+
+### Next.js
+
+Next.js extends React to provide a powerful method for loading a page's initial data, no matter where it is coming from. With a single place to prepopulate page context, server-side rendering with Next.js seamlessly integrates with any existing data-fetching strategy.
+
+### React Apollo
 
 React Apollo allows you to fetch data from your GraphQL server and use it in building complex and reactive UIs using the React framework. React Apollo may be used in any context that React may be used. In the browser, in React Native, or in Node.js when you want to do server-side rendering.
 
-## Tests
+### Typescript
 
-- Going into more detail on code and technologies used
-- I utilized this nifty <a href="https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet" target="_blank">Markdown Cheatsheet</a> for this sample `README`.
+TypeScript is an open-source programming language developed and maintained by Microsoft. It is a strict syntactical superset of JavaScript, and adds optional static typing to the language. TypeScript is designed for development of large applications and transcompiles to JavaScript.
+
+### JsonWebToken
+
+ JSON Web Token (JWT) is a compact, URL-safe means of representing claims to be transferred between two parties.
+
+### TSLint
+
+ TSLint is an extensible static analysis tool that checks TypeScript code for readability, maintainability, and functionality errors
+
+### Husky
+
+Husky can prevent bad git commit, git push and more 🐶 woof!
+
+### Bluebird
+
+Bluebird is a fully featured promise library with focus on innovative features and performance.
+
+### Cors
+Cross-origin resource sharing is a mechanism that allows restricted resources on a web page to be requested from another domain outside the domain from which the first resource was served
 
 ---
 
@@ -143,13 +192,6 @@ React Apollo allows you to fetch data from your GraphQL server and use it in bui
 ### Step 3
 
 - 🔃 Create a new pull request using <a href="https://github.com/garganurag893/Next.js_GraphQL_Express_Apollo_Boilerplate" target="_blank">`https://github.com/garganurag893/Next.js_GraphQL_Express_Apollo_Boilerplate`</a>.
-
----
-
-## FAQ
-
-- **How do I do _specifically_ so and so?**
-  - No problem! Just do this.
 
 ---
 
