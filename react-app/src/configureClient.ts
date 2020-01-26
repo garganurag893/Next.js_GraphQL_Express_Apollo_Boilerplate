@@ -48,7 +48,7 @@ const webSocketLink: WebSocketLink = new WebSocketLink({
  * Set Token
  * @param token
  */
-export const setToken = async (token: string) => {
+export const setToken = async (token: string | undefined) => {
   try {
     authToken = token ? `Bearer ${token}` : '';
     Cookies.set('token', authToken, { expires: 7 });

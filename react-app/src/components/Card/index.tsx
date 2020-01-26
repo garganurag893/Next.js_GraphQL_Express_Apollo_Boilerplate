@@ -25,7 +25,7 @@ interface UserCardProps {
 
 const Card: React.SFC<CardProps> = props => {
   return (
-    <Link to={props.href}>
+    <Link to={props.href} className="link">
       <div className="card">
         <h2>{props.title}</h2>
       </div>

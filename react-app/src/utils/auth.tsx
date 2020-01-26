@@ -4,29 +4,26 @@
  */
 
 import * as React from 'react';
-import { getToken } from '../configureClient';
+import { setToken } from '../configureClient';
+import Cookies from 'js-cookie';
 import { Route, Redirect } from 'react-router-dom';
 
-export const auth = async () => {
-  const token = await getToken();
-  if (token && token !== '') {
-    return true;
+const PrivateRoute = ({ children, ...rest }: any) => {
+  const token = Cookies.get('token');
+  setToken(token);
+  if (!token) {
+    return <Redirect to="/" />;
   }
-  return false;
-};
-
-const PrivateRoute = async ({ children, ...rest }: any) => {
-  const isAuthenticated = await auth();
   return (
     <Route
       {...rest}
       render={({ location }: any) =>
-        isAuthenticated ? (
+        token ? (
           children
         ) : (
           <Redirect
             to={{
-              pathname: '/login',
+              pathname: '/',
               state: { from: location },
             }}
           />

@@ -1,5 +1,5 @@
 /**
- * Login Component
+ * Login Form Component
  * @author Anurag Garg <garganurag893@gmail.com>
  */
 
@@ -80,7 +80,7 @@ class LoginForm extends React.PureComponent<any, LoginFormState> {
               required
             />
             <input type="submit" value="Submit" className="login-button" />
-            <Link to="/signup">
+            <Link to="/signup" className="signup-link">
               <p>
                 New user ? <b>Sign Up</b>
               </p>
