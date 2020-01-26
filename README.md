@@ -7,7 +7,12 @@
 <p align="center">Building server-side rendered react website is hard, next.js commits to solving this problem beautifully. In this post, we will make a next.js app with basic auth functionality using GraphQL.
 </p>
 
-[![Build Status](http://img.shields.io/travis/badges/badgerbadgerbadger.svg?style=flat-square)](https://travis-ci.org/badges/badgerbadgerbadger) [![Github Issues](https://img.shields.io/github/issues/garganurag893/Next.js_GraphQL_Express_Apollo_Boilerplate)](https://img.shields.io/github/issues/garganurag893/Next.js_GraphQL_Express_Apollo_Boilerplate) [![Pending Pull-Requests](https://img.shields.io/github/issues-pr/garganurag893/Next.js_GraphQL_Express_Apollo_Boilerplate)](https://img.shields.io/github/issues-pr/garganurag893/Next.js_GraphQL_Express_Apollo_Boilerplate) [![License](http://img.shields.io/:license-mit-blue.svg?style=flat-square)](http://badges.mit-license.org)
+<p align="center">
+<img src="http://img.shields.io/travis/badges/badgerbadgerbadger.svg?style=flat-square" alt="build"/>
+<img src="https://img.shields.io/github/issues/garganurag893/Next.js_GraphQL_Express_Apollo_Boilerplate" alt="build"/>
+<img src="https://img.shields.io/github/issues-pr/garganurag893/Next.js_GraphQL_Express_Apollo_Boilerplate" alt="build"/>
+<img src="http://img.shields.io/:license-mit-blue.svg?style=flat-square" alt="build"/>
+</p>
 
 ---
 
@@ -211,6 +216,11 @@ Reach out to me at one of the following places!
 It will be truely helpful if you donate me.
 
 [![Support via Paypal](https://www.paypalobjects.com/webstatic/mktg/Logo/pp-logo-200px.png)](https://paypal.me/garganurag893?locale.x=en_GB)
+<p>
+<img src="https://www.komando.com/wp-content/uploads/2019/05/google-pay-badge.png" alt="Support via GooglePay" height="50"/>
+</p>
+<h5>+919468026011
+</h5>
 
 ---
 
