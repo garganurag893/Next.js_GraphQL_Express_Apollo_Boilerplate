@@ -1,6 +1,15 @@
+/**
+ * Primary file for extracting proper schema structured objects
+ * @author Anurag Garg <garganurag893@gmail.com>
+ */
+
 import dateToString from '../../helpers/date';
 import User from '../../models/user';
 
+/**
+ * Get user object with schema typing
+ * @param id
+ */
 const getUser = async (id: string) => {
   try {
     const user: any = await User.findById(id);
@@ -15,6 +24,10 @@ const getUser = async (id: string) => {
   }
 };
 
+/**
+ * Get user object with schema typing
+ * @param user
+ */
 const transformUser = (user: any) => {
   return {
     ...user._doc,

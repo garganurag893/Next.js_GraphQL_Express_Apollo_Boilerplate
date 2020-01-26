@@ -1,3 +1,8 @@
+/**
+ * Card Component
+ * @author Anurag Garg <garganurag893@gmail.com>
+ */
+
 import React from 'react';
 import Link from 'next/link';
 
@@ -58,7 +63,7 @@ const Card: React.SFC<CardProps> = props => {
 export const UserCard: React.SFC<UserCardProps> = props => {
   return (
     <div key={props.user._id} className="listCard">
-      <img src={props.img} height="90" />
+      <img src={props.img} alt="user" height="90" />
       <div className="userCardDetails">
         <h2>{props.user.name}</h2>
         <h2>{props.user.email}</h2>

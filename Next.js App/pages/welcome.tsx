@@ -1,28 +1,23 @@
 /**
- * Subscription Page
+ * Welcome Page
  * @author Anurag Garg <garganurag893@gmail.com>
  */
 
 import React from 'react';
-import { useSubscription } from '@apollo/react-hooks';
-import { UserCard } from '../src/components/Card';
-import USER_ADDED from '../src/graphql/subscription/users';
+import Card from '../src/components/Card';
+import Footer from '../src/components/Footer';
 import { withAuthSync } from '../src/utils/auth';
 
-const Users = () => {
-  const { data, loading, error } = useSubscription(USER_ADDED);
-  let message = 'New User';
-  if (loading) message = 'Listening...';
-  if (error) message = `Error! ${error.message}`;
-  if (data && data.userAdded.length <= 0) message = 'No New User Added';
+const Welcome: React.SFC = () => {
   return (
     <div className="container">
-      <h1 className="heading">{message}</h1>
-      {data && data.userAdded && (
-        <div className="listContainer">
-          <UserCard img="./user.png" user={data.userAdded} />
-        </div>
-      )}
+      <h1 className="heading">Welcome</h1>
+      <div className="cardContainer">
+        <Card title="Query" href="/users" />
+        <Card title="Mutation" href="/update" />
+        <Card title="Subscription" href="/subscription" />
+      </div>
+      <Footer />
       <style jsx>
         {`
           .container {
@@ -34,17 +29,17 @@ const Users = () => {
             align-items: center;
             flex-flow: column wrap;
           }
-          .listContainer {
+          .cardContainer {
             display: flex;
             flex-flow: wrap row;
-            justify-content: space-evenly;
+            justify-content: center;
             align-items: center;
           }
           .heading {
             color: white;
             text-align: center;
             font-size: 5rem;
-            padding: 0rem 0 5rem;
+            padding: 6rem 0rem;
           }
         `}
       </style>
@@ -76,4 +71,4 @@ const Users = () => {
   );
 };
 
-export default withAuthSync(Users);
+export default withAuthSync(Welcome);

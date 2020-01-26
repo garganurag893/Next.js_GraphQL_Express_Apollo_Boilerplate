@@ -1,37 +1,44 @@
+/**
+ * Main Page
+ * @author Anurag Garg <garganurag893@gmail.com>
+ */
+
 import React from 'react';
-import Card from '../src/components/Card';
+import Login from '../src/components/Login';
+import Footer from '../src/components/Footer';
 
 const Home: React.SFC = () => {
   return (
-    <div className="container">
-      <h1 className="heading">Welcome</h1>
-      <div className="cardContainer">
-        <Card title="Query" href="/users" />
-        <Card title="Mutation" href="/signup" />
-        <Card title="Subscription" href="/subscription" />
+    <div className="mainContainer">
+      <div className="container">
+        <h1 className="heading">Welcome</h1>
+        <Login />
       </div>
+      <Footer />
       <style jsx>
         {`
-          .container {
+          .mainContainer {
             height: 100%;
             min-height: 100vh;
             width: 100%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-flow: column wrap;
           }
-          .cardContainer {
+          .container {
             display: flex;
-            flex-flow: wrap row;
             justify-content: center;
             align-items: center;
+            flex-flow: row wrap;
+            padding: 8rem 0rem !important;
           }
           .heading {
             color: white;
             text-align: center;
             font-size: 5rem;
-            padding: 0rem 0 5rem;
+            padding: 2rem;
+          }
+          @media only screen and (max-width: 740px) {
+            .container {
+              padding: 3rem 0rem !important;
+            }
           }
         `}
       </style>

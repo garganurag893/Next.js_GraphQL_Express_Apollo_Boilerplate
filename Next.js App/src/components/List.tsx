@@ -1,3 +1,8 @@
+/**
+ * List Component
+ * @author Anurag Garg <garganurag893@gmail.com>
+ */
+
 import React from 'react';
 import { UserCard } from './Card';
 

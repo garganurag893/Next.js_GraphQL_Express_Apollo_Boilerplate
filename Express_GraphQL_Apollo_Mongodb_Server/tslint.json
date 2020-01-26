@@ -22,7 +22,8 @@
   },
   "linterOptions": {
     "exclude": [
-      "node_modules/**"
+      "node_modules/**",
+      "dist/**/*.ts"
     ]
   },
   "rulesDirectory": []
