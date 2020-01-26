@@ -3,9 +3,9 @@
  * @author Anurag Garg <garganurag893@gmail.com>
  */
 
-import React from "react";
-import { UserCard } from "../Card";
-import "./styles.scss";
+import React from 'react';
+import { UserCard } from '../Card';
+import './styles.scss';
 
 interface User {
   name: string;

@@ -1,15 +1,15 @@
-import React from "react";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import { ToastContainer } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
-import { ApolloProvider } from "@apollo/react-hooks";
-import apolloClient from "./configureClient";
-import Login from "./screens/Login";
-import SignUp from "./screens/SignUp";
-import Welcome from "./screens/Welcome";
-import Users from "./screens/Users";
-import Update from "./screens/Update";
-import Subscription from "./screens/Subscription";
+import React from 'react';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import { ApolloProvider } from '@apollo/react-hooks';
+import apolloClient from './configureClient';
+import Login from './screens/Login';
+import SignUp from './screens/SignUp';
+import Welcome from './screens/Welcome';
+import Users from './screens/Users';
+import Update from './screens/Update';
+import Subscription from './screens/Subscription';
 
 const App = () => {
   return (

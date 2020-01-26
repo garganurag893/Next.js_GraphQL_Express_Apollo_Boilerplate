@@ -1,3 +1,4 @@
+/* eslint-disable no-useless-escape */
 /**
  * Email Validation
  * @author Anurag Garg <garganurag893@gmail.com>

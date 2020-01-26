@@ -3,15 +3,15 @@
  * @author Anurag Garg <garganurag893@gmail.com>
  */
 
-import React from "react";
-import { toast } from "react-toastify";
-import { ApolloConsumer } from "react-apollo";
-import LOGIN_USER from "../../graphql/query/login";
-import { validateEmail } from "../../utils/validation";
-import { setToken } from "../../configureClient";
-import { Link } from "react-router-dom";
-import Cookies from "js-cookie";
-import "./styles.scss";
+import React from 'react';
+import { toast } from 'react-toastify';
+import { ApolloConsumer } from 'react-apollo';
+import LOGIN_USER from '../../graphql/query/login';
+import { validateEmail } from '../../utils/validation';
+import { setToken } from '../../configureClient';
+import { Link } from 'react-router-dom';
+import Cookies from 'js-cookie';
+import './styles.scss';
 
 interface LoginFormState {
   [key: string]: any;
@@ -23,8 +23,8 @@ class LoginForm extends React.PureComponent<any, LoginFormState> {
   constructor(props: any) {
     super(props);
     this.state = {
-      email: "",
-      password: ""
+      email: '',
+      password: '',
     };
   }
 
@@ -39,17 +39,17 @@ class LoginForm extends React.PureComponent<any, LoginFormState> {
       if (validateEmail(state.email)) {
         const { data } = await client.query({
           query: LOGIN_USER,
-          variables: { ...state }
+          variables: { ...state },
         });
         const { token, userId } = data.login;
         setToken(token);
-        Cookies.set("userId", userId, { expires: 7 });
-        props.history.replace("/welcome");
+        Cookies.set('userId', userId, { expires: 7 });
+        props.history.replace('/welcome');
       } else {
-        toast.error("Invalid Email");
+        toast.error('Invalid Email');
       }
     } catch (error) {
-      toast.error("Not Authenticated");
+      toast.error('Not Authenticated');
     }
   };
 
@@ -60,8 +60,7 @@ class LoginForm extends React.PureComponent<any, LoginFormState> {
         {client => (
           <form
             onSubmit={e => this.handleSubmit(e, client)}
-            className="login-form"
-          >
+            className="login-form">
             <input
               type="text"
               placeholder="Email"

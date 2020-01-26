@@ -3,15 +3,15 @@
  * @author Anurag Garg <garganurag893@gmail.com>
  */
 
-import React from "react";
-import { toast } from "react-toastify";
-import Footer from "../../components/Footer";
-import Cookies from "js-cookie";
-import { Mutation } from "@apollo/react-components";
-import CREATE_USER from "../../graphql/mutation/createUser";
-import { setToken } from "../../configureClient";
-import { validateEmail } from "../../utils/validation";
-import "./styles.scss";
+import React from 'react';
+import { toast } from 'react-toastify';
+import Footer from '../../components/Footer';
+import Cookies from 'js-cookie';
+import { Mutation } from '@apollo/react-components';
+import CREATE_USER from '../../graphql/mutation/createUser';
+import { setToken } from '../../configureClient';
+import { validateEmail } from '../../utils/validation';
+import './styles.scss';
 
 interface SignUpState {
   [key: string]: any;
@@ -24,9 +24,9 @@ class SignUp extends React.PureComponent<any, SignUpState> {
   constructor(props: any) {
     super(props);
     this.state = {
-      name: "",
-      email: "",
-      password: ""
+      name: '',
+      email: '',
+      password: '',
     };
   }
 
@@ -41,18 +41,18 @@ class SignUp extends React.PureComponent<any, SignUpState> {
       if (validateEmail(state.email)) {
         const data = await createUser({
           variables: {
-            userInput: { ...state }
-          }
+            userInput: { ...state },
+          },
         });
         const { token, userId } = data.createUser;
         setToken(token);
-        Cookies.set("userId", userId, { expires: 7 });
-        props.history.replace("/welcome");
+        Cookies.set('userId', userId, { expires: 7 });
+        props.history.replace('/welcome');
       } else {
-        toast.error("Invalid Email");
+        toast.error('Invalid Email');
       }
     } catch (error) {
-      toast.error("Check your connection");
+      toast.error('Check your connection');
     }
   };
   render() {
@@ -64,8 +64,7 @@ class SignUp extends React.PureComponent<any, SignUpState> {
           {(createUser: any) => (
             <form
               onSubmit={event => this.handleSubmit(createUser, event)}
-              className="signup-form"
-            >
+              className="signup-form">
               <input
                 type="text"
                 placeholder="Name"

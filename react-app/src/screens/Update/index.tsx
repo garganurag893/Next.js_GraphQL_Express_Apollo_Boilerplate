@@ -3,13 +3,13 @@
  * @author Anurag Garg <garganurag893@gmail.com>
  */
 
-import React from "react";
-import { toast } from "react-toastify";
-import Footer from "../../components/Footer";
-import { Mutation } from "@apollo/react-components";
-import { validateEmail } from "../../utils/validation";
-import UPDATE_USER from "../../graphql/mutation/updateUser";
-import "./styles.scss";
+import React from 'react';
+import { toast } from 'react-toastify';
+import Footer from '../../components/Footer';
+import { Mutation } from '@apollo/react-components';
+import { validateEmail } from '../../utils/validation';
+import UPDATE_USER from '../../graphql/mutation/updateUser';
+import './styles.scss';
 
 interface UpdateState {
   [key: string]: any;
@@ -22,9 +22,9 @@ class Update extends React.PureComponent<any, UpdateState> {
   constructor(props: any) {
     super(props);
     this.state = {
-      name: "",
-      email: "",
-      password: ""
+      name: '',
+      email: '',
+      password: '',
     };
   }
 
@@ -40,16 +40,16 @@ class Update extends React.PureComponent<any, UpdateState> {
         await updateUser({
           variables: {
             userId: props.userId,
-            updateUser: { ...state }
-          }
+            updateUser: { ...state },
+          },
         });
-        toast.success("Profile Updated");
-        props.history.push("/welcome");
+        toast.success('Profile Updated');
+        props.history.push('/welcome');
       } else {
-        toast.error("Invalid Email");
+        toast.error('Invalid Email');
       }
     } catch (error) {
-      toast.error("Check your connection");
+      toast.error('Check your connection');
     }
   };
   render() {
@@ -61,8 +61,7 @@ class Update extends React.PureComponent<any, UpdateState> {
           {(updateUser: any) => (
             <form
               onSubmit={event => this.handleSubmit(updateUser, event)}
-              className="update-form"
-            >
+              className="update-form">
               <input
                 type="text"
                 placeholder="Name"

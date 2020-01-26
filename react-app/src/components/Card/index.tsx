@@ -3,9 +3,9 @@
  * @author Anurag Garg <garganurag893@gmail.com>
  */
 
-import React from "react";
-import "./styles.scss";
-import { Link } from "react-router-dom";
+import React from 'react';
+import './styles.scss';
+import { Link } from 'react-router-dom';
 
 interface User {
   name: string;

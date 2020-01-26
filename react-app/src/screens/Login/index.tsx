@@ -3,10 +3,10 @@
  * @author Anurag Garg <garganurag893@gmail.com>
  */
 
-import React from "react";
-import LoginForm from "../../components/LoginForm";
-import Footer from "../../components/Footer";
-import "./styles.scss";
+import React from 'react';
+import LoginForm from '../../components/LoginForm';
+import Footer from '../../components/Footer';
+import './styles.scss';
 
 const Login: React.SFC = (props: any) => {
   return (

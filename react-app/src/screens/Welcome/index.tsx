@@ -3,10 +3,10 @@
  * @author Anurag Garg <garganurag893@gmail.com>
  */
 
-import React from "react";
-import Card from "../../components/Card";
-import Footer from "../../components/Footer";
-import "./styles.scss";
+import React from 'react';
+import Card from '../../components/Card';
+import Footer from '../../components/Footer';
+import './styles.scss';
 
 const Welcome: React.SFC = () => {
   return (
