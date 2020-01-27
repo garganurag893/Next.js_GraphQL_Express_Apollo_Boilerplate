@@ -2,9 +2,10 @@
 <a href="https://twitter.com/AnuragG94634191"><img src="./Gifs/boilerplate.gif" title="Anurag Garg"  alt="Anurag Garg"></a>
 </p>
 
-<h1 align="center">Next.js GraphQL Express Apollo Boilerplate</h1>
+<h1 align="center">Next.js React GraphQL Express Apollo Boilerplate</h1>
 
-<p align="center">Building server-side rendered react website is hard, next.js commits to solving this problem beautifully. In this post, we will make a next.js app with basic auth functionality using GraphQL.
+<p align="center">Performance oriented Next.js
+and React.js application boilerplate with Typescript, Express.js, GraphQL, Apollo and Sass
 </p>
 
 <p align="center">
@@ -14,7 +15,9 @@
 <img src="http://img.shields.io/:license-mit-blue.svg?style=flat-square" alt="build"/>
 </p>
 
----
+<p align="center">
+<b>Live Demo : -</b> <a href ="http://anurag-boilerplate-app.herokuapp.com/">http://anurag-boilerplate-app.herokuapp.com/</a>
+</p>
 
 ## Table of Contents
 
@@ -29,6 +32,7 @@
   - [GraphQL](#graphql)
   - [Express](#express)
   - [Next.js](#nextjs)
+  - [React](#react)
   - [React Apollo](#react-apollo)
   - [Typescript](#typescript)
   - [JsonWebToken](#jsonwebtoken)
@@ -43,8 +47,6 @@
 - [Support](#support)
 - [Donations](#donations)
 - [License](#license)
-
----
 
 ## Installation
 
@@ -88,7 +90,7 @@ PORT = 4020;
 
 ### Step 3: Install dependencies
 
-Navigate to the server and nextjs app directories and run the below command:
+Navigate to the server, nextjs and react app directories and run the below command:
 
 ```bash
 $ yarn
@@ -108,11 +110,18 @@ Now navigate to **Nextjs App** directory and run the below command in your termi
 $ yarn dev
 ```
 
+Now navigate to **React App** directory and run the below command in your terminal :
+
+```bash
+$ yarn start
+```
+
 ### Step 5: Deployment
 
 To deploy with ZEIT Now through your terminal, you will need to install Now CLI, a frequently updated, and open-source, command-line interface.
 
 You can get Now CLI from either npm or Yarn. Using npm, run the following command from your terminal:
+
 ```bash
 $ npm i -g now
 ```
@@ -120,6 +129,7 @@ $ npm i -g now
 To verify that you have installed Now CLI, try running now help from your terminal.
 
 With Now CLI installed, you can now login using the following command:
+
 ```bash
 $ now login
 ```
@@ -131,8 +141,6 @@ $ now
 ```
 
 Once deployed, you will get a preview URL that is assigned on each deployment to share the latest changes under the same address.
-
----
 
 ## Features
 
@@ -148,6 +156,10 @@ Express is a minimal and flexible Node.js web application framework that provide
 
 Next.js extends React to provide a powerful method for loading a page's initial data, no matter where it is coming from. With a single place to prepopulate page context, server-side rendering with Next.js seamlessly integrates with any existing data-fetching strategy.
 
+### React
+
+React makes it painless to create interactive UIs. Design simple views for each state in your application, and React will efficiently update and render just the right components when your data changes.
+
 ### React Apollo
 
 React Apollo allows you to fetch data from your GraphQL server and use it in building complex and reactive UIs using the React framework. React Apollo may be used in any context that React may be used. In the browser, in React Native, or in Node.js when you want to do server-side rendering.
@@ -158,11 +170,11 @@ TypeScript is an open-source programming language developed and maintained by Mi
 
 ### JsonWebToken
 
- JSON Web Token (JWT) is a compact, URL-safe means of representing claims to be transferred between two parties.
+JSON Web Token (JWT) is a compact, URL-safe means of representing claims to be transferred between two parties.
 
 ### TSLint
 
- TSLint is an extensible static analysis tool that checks TypeScript code for readability, maintainability, and functionality errors
+TSLint is an extensible static analysis tool that checks TypeScript code for readability, maintainability, and functionality errors
 
 ### Husky
 
@@ -173,9 +185,8 @@ Husky can prevent bad git commit, git push and more 🐶 woof!
 Bluebird is a fully featured promise library with focus on innovative features and performance.
 
 ### Cors
-Cross-origin resource sharing is a mechanism that allows restricted resources on a web page to be requested from another domain outside the domain from which the first resource was served
 
----
+Cross-origin resource sharing is a mechanism that allows restricted resources on a web page to be requested from another domain outside the domain from which the first resource was served
 
 ## Contributing
 
@@ -198,8 +209,6 @@ Cross-origin resource sharing is a mechanism that allows restricted resources on
 
 - 🔃 Create a new pull request using <a href="https://github.com/garganurag893/Next.js_GraphQL_Express_Apollo_Boilerplate" target="_blank">`https://github.com/garganurag893/Next.js_GraphQL_Express_Apollo_Boilerplate`</a>.
 
----
-
 ## Support
 
 Reach out to me at one of the following places!
@@ -209,20 +218,17 @@ Reach out to me at one of the following places!
 - Instagram at <a href="https://www.instagram.com/the_only_anurag/" target="_blank">https://www.instagram.com/the_only_anurag/</a>
 - Email at garganurag893@gmail.com
 
----
-
 ## Donations
 
-It will be truely helpful if you donate me.
+If this boilerplate help save your valuable time and you feel to help me donate now to help me create more amazing stuff.
 
 [![Support via Paypal](https://www.paypalobjects.com/webstatic/mktg/Logo/pp-logo-200px.png)](https://paypal.me/garganurag893?locale.x=en_GB)
+
 <p>
 <img src="https://www.komando.com/wp-content/uploads/2019/05/google-pay-badge.png" alt="Support via GooglePay" height="50"/>
 </p>
 <h5>+919468026011
 </h5>
-
----
 
 ## License
 
