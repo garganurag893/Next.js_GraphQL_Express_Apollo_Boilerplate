@@ -1,0 +1,85 @@
+{
+  "name": "react-app",
+  "version": "0.1.0",
+  "private": true,
+  "author": "Anurag Garg",
+  "license": "MIT",
+  "dependencies": {
+    "@apollo/react-components": "^3.1.3",
+    "@apollo/react-hooks": "^3.1.3",
+    "@testing-library/jest-dom": "^4.2.4",
+    "@testing-library/react": "^9.3.2",
+    "@testing-library/user-event": "^7.1.2",
+    "@types/jest": "^24.0.0",
+    "@types/node": "^12.0.0",
+    "@types/react": "^16.9.0",
+    "@types/react-dom": "^16.9.0",
+    "apollo-cache-inmemory": "^1.6.5",
+    "apollo-client": "^2.6.8",
+    "apollo-link-batch-http": "^1.2.13",
+    "apollo-link-http": "^1.5.16",
+    "apollo-link-ws": "^1.0.19",
+    "graphql": "^14.5.8",
+    "graphql-tag": "^2.10.1",
+    "isomorphic-unfetch": "^3.0.0",
+    "js-cookie": "^2.2.1",
+    "node-sass": "^4.13.1",
+    "react": "^16.12.0",
+    "react-apollo": "^3.1.3",
+    "react-dom": "^16.12.0",
+    "react-router-dom": "^5.1.2",
+    "react-scripts": "3.3.0",
+    "react-toastify": "^5.5.0",
+    "subscriptions-transport-ws": "^0.9.16",
+    "typescript": "~3.7.2"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "lint": "eslint './**/*.{ts,js,tsx}'"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "./**/*.{js,jsx,ts,tsx,css}": [
+      "prettier --write",
+      "yarn lint"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "@types/js-cookie": "^2.2.4",
+    "@types/react-router-dom": "^5.1.3",
+    "@typescript-eslint/eslint-plugin": "^2.16.0",
+    "@typescript-eslint/parser": "^2.16.0",
+    "babel-eslint": "^10.0.3",
+    "eslint": "^6.8.0",
+    "eslint-config-prettier": "^6.9.0",
+    "eslint-config-react-app": "^5.1.0",
+    "eslint-plugin-flowtype": "^4",
+    "eslint-plugin-import": "^2.20.0",
+    "eslint-plugin-jsx-a11y": "^6.2.3",
+    "eslint-plugin-prettier": "^3.1.2",
+    "eslint-plugin-react": "^7.18.0",
+    "eslint-plugin-react-hooks": "^2.3.0",
+    "husky": "^4.2.0",
+    "lint-staged": "^10.0.2",
+    "prettier": "^1.19.1"
+  }
+}

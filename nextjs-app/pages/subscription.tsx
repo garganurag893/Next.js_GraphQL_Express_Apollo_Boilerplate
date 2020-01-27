@@ -9,7 +9,7 @@ import { UserCard } from '../src/components/Card';
 import USER_ADDED from '../src/graphql/subscription/users';
 import { withAuthSync } from '../src/utils/auth';
 
-const Users = () => {
+const Subscription = () => {
   const { data, loading, error } = useSubscription(USER_ADDED);
   let message = 'New User';
   if (loading) message = 'Listening...';
@@ -76,4 +76,4 @@ const Users = () => {
   );
 };
 
-export default withAuthSync(Users);
+export default withAuthSync(Subscription);

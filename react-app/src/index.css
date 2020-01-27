@@ -1,0 +1,15 @@
+h1,
+h2 {
+  margin: 0;
+  font-family: Candara;
+}
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  min-height: 100vh;
+  font-family: Candara;
+  background: #355c7d;
+  background: -webkit-linear-gradient(to right, #c06c84, #6c5b7b, #355c7d);
+  background: linear-gradient(to right, #c06c84, #6c5b7b, #355c7d);
+}
