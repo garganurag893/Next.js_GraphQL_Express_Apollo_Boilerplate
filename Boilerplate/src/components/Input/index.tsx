@@ -8,6 +8,7 @@ interface InputProps {
   icon: string;
   value: string;
   name: string;
+  autoCapitalize?: 'none' | 'sentences' | 'words' | 'characters' | undefined;
   handleChange: (index: string, value: any) => void;
 }
 
@@ -17,11 +18,13 @@ const Input: FunctionComponent<InputProps> = props => {
       <View style={styles.inputBoxIconContainer}></View>
       <TextInput
         placeholder={props.placeholder}
+        autoCapitalize={props.autoCapitalize ? props.autoCapitalize : 'none'}
         secureTextEntry={props.name === 'password'}
+        autoCorrect={false}
         selectionColor={styleGuide.inputSelectionColor}
         value={props.value}
-        onChange={value => {
-          props.handleChange(props.name, value);
+        onChangeText={text => {
+          props.handleChange(props.name, text);
         }}
         style={styles.inputBoxTextContainer}
       />

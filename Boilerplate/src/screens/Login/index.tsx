@@ -1,6 +1,7 @@
 import React, {PureComponent} from 'react';
 import {View, Text} from 'react-native';
 import {ApolloConsumer} from 'react-apollo';
+import Snackbar from 'react-native-snackbar';
 import Container from '../../components/Container';
 import Input from '../../components/Input';
 import styles from './styles';
@@ -31,19 +32,23 @@ class Login extends PureComponent<any, LoginState> {
   handleSubmit = async (client: any) => {
     try {
       const {state, props} = this;
-      if (validateEmail(state.email)) {
-        const {data} = await client.query({
-          query: LOGIN_USER,
-          variables: {...state},
-        });
-        const {token, userId} = data.login;
-        setTokenId(token, userId);
-        props.navigation.navigate('/welcome');
+      if (state.password !== '' && state.email !== '') {
+        if (validateEmail(state.email)) {
+          const {data} = await client.query({
+            query: LOGIN_USER,
+            variables: {...state},
+          });
+          const {token, userId} = data.login;
+          setTokenId(token, userId);
+          props.navigation.navigate('/welcome');
+        } else {
+          Snackbar.show({text: 'Invalid Email'});
+        }
       } else {
-        // toast.error('Invalid Email');
+        Snackbar.show({text: 'Required fields not filled'});
       }
     } catch (error) {
-      // toast.error('Not Authenticated');
+      Snackbar.show({text: 'Not Authenticated!'});
     }
   };
 
