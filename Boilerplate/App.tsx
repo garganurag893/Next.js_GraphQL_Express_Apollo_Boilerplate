@@ -10,16 +10,16 @@ export default class App extends PureComponent<any, AppState> {
   constructor(props: any) {
     super(props);
     this.state = {
-      initialRouteName: 'welcome',
+      initialRouteName: 'login',
     };
     console.disableYellowBox = true;
   }
-  async componentWillMount() {
+  async UNSAFE_componentWillMount() {
     try {
       const token = await getToken();
       if (token) {
         this.setState({
-          initialRouteName: 'welcome',
+          initialRouteName: 'login',
         });
       }
       // SplashScreen.hide();

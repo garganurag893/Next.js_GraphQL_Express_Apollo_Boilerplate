@@ -6,6 +6,7 @@ import {
 } from 'react-navigation';
 import {createStackNavigator} from 'react-navigation-stack';
 import Welcome from '../screens/Welcome';
+import Login from '../screens/Login';
 
 interface AppNavigatorProps {
   initialRouteName: string | undefined;
@@ -23,6 +24,7 @@ const AppNavigator = ({initialRouteName}: AppNavigatorProps) => {
     createStackNavigator(
       {
         welcome: {screen: Welcome},
+        login: {screen: Login},
       },
       {
         initialRouteName,
