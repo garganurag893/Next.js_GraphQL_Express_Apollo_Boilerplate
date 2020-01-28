@@ -1,5 +1,6 @@
 import React, {PureComponent} from 'react';
 import AppNavigator from './src/navigation';
+import {getToken} from './src/configureClient';
 
 interface AppState {
   initialRouteName: string;
@@ -15,7 +16,7 @@ export default class App extends PureComponent<any, AppState> {
   }
   async componentWillMount() {
     try {
-      const token = '112';
+      const token = await getToken();
       if (token) {
         this.setState({
           initialRouteName: 'welcome',
