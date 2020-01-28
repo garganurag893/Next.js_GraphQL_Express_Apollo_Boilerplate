@@ -8,7 +8,13 @@ const styles = StyleSheet.create({
     color: styleGuide.textColor,
     fontWeight: 'bold',
     textAlign: 'center',
-    marginTop: heightRatio * 200,
+    marginVertical: heightRatio * 90,
+  },
+  inputFieldContainer: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    marginTop: heightRatio * 20,
   },
 });
 

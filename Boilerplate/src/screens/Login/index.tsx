@@ -1,6 +1,7 @@
 import React, {PureComponent} from 'react';
-import Container from '../../components/Container';
 import {View, Text} from 'react-native';
+import Container from '../../components/Container';
+import Input from '../../components/Input';
 import styles from './styles';
 
 interface LoginState {
@@ -18,14 +19,31 @@ class Login extends PureComponent<any, LoginState> {
     };
   }
 
-  handleChange = (index: string, value: string) => {
+  handleChange = (index: string, value: any) => {
     this.setState({[index]: value});
   };
 
   render() {
+    const {email, password} = this.state;
     return (
       <Container>
         <Text style={styles.heading}>Welcome</Text>
+        <View style={styles.inputFieldContainer}>
+          <Input
+            placeholder="Email"
+            name="email"
+            handleChange={this.handleChange}
+            value={email}
+            icon="email"
+          />
+          <Input
+            placeholder="Password"
+            name="password"
+            handleChange={this.handleChange}
+            value={password}
+            icon="password"
+          />
+        </View>
       </Container>
     );
   }

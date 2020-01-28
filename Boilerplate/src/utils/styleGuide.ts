@@ -10,6 +10,9 @@ const styleGuide = {
   themebackground: themebackground1,
   textColor: 'white',
   inputTextColor: 'black',
+  inputBoxColor: 'white',
+  inputFontSize: 18,
+  inputSelectionColor: themebackground1,
   bigShadow: {
     shadowColor: '#000',
     shadowOffset: {
