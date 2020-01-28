@@ -42,13 +42,15 @@ const webSocketLink: WebSocketLink = new WebSocketLink({
 });
 
 /**
- * Set Token
+ * Set Token And User Id
  * @param token
+ * @param userId
  */
-export const setToken = async (token: string | undefined) => {
+export const setTokenId = async (token: string, userId: string) => {
   try {
     authToken = token ? `Bearer ${token}` : '';
     await AsyncStorage.setItem('token', authToken);
+    await AsyncStorage.setItem('userId', userId);
   } catch (error) {
     console.log(error);
   }

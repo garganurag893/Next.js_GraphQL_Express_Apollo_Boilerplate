@@ -12,6 +12,8 @@ const styleGuide = {
   inputTextColor: 'black',
   inputBoxColor: 'white',
   inputFontSize: 18,
+  buttonTextColor: 'white',
+  buttonFontSize: 20,
   inputSelectionColor: themebackground1,
   bigShadow: {
     shadowColor: '#000',
