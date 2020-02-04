@@ -15,7 +15,7 @@ interface InputProps {
 const Input: FunctionComponent<InputProps> = props => {
   return (
     <View style={styles.inputBoxContainer}>
-      <View style={styles.inputBoxIconContainer}></View>
+      <View style={styles.inputBoxIconContainer} />
       <TextInput
         placeholder={props.placeholder}
         autoCapitalize={props.autoCapitalize ? props.autoCapitalize : 'none'}

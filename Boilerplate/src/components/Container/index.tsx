@@ -7,7 +7,7 @@ import styleGuide from '../../utils/styleGuide';
 const Container: FunctionComponent = (props: PropsWithChildren<any>) => {
   return (
     <>
-      <StatusBar barStyle="dark-content" />
+      <StatusBar barStyle="light-content" />
       <View style={styles.mainContainer}>
         <LinearGradient colors={styleGuide.gradient} style={styles.gradient} />
         <SafeAreaView style={styles.safeAreaView}>
