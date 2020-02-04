@@ -15,10 +15,6 @@ and React.js application boilerplate with Typescript, Express.js, GraphQL, Apoll
 <img src="http://img.shields.io/:license-mit-blue.svg?style=flat-square" alt="build"/>
 </p>
 
-<p align="center">
-<b>Live Demo : -</b> <a href ="http://anurag-boilerplate-app.herokuapp.com/">http://anurag-boilerplate-app.herokuapp.com/</a>
-</p>
-
 ## Table of Contents
 
 - [Table of Contents](#table-of-contents)
